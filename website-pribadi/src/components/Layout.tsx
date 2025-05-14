@@ -1,19 +1,27 @@
 // import { ReactNode } from 'react';
-import Head from 'next/head';
+// import Head from 'next/head';
 import Navbar from './Navbar';
 import Footer from './Footer';
+// import { defaultMetadata } from '@/utils/metadata';
 
 interface LayoutProps {
   children: React.ReactNode;
-  pageId?: string;
 }
 
-export default function Layout({ children }: LayoutProps){
+export default function Layout({ children }: any){
+    // const metadata = children.props.metadata || defaultMetadata;
+    
     return(
         <>
-            <Head>
-                <link rel='icon' href='../app/favicon.ico' />
-            </Head>
+            {/* <Head>
+                <link rel='icon' href='/favicon.ico' />
+                <title>{metadata.title}</title>
+                <meta name="description" content={metadata.description}/>
+                <meta property="og:title" content={metadata.title}/>
+                <meta property="og:description" content={metadata.description}/>
+                <meta property="og:image" content={metadata.openGraph.image}/>
+                <meta property="og:url" content={metadata.openGraph.url}/>
+            </Head> */}
             <Navbar />
                 <main>{children}</main>
             <Footer />
